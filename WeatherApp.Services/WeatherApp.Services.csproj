@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WeatherApp.Data.Models\WeatherApp.Data.Models.csproj" />
+    <ProjectReference Include="..\WeatherApp.GCommon\WeatherApp.GCommon.csproj" />
+    <ProjectReference Include="..\WeatherApp.Services.Models\WeatherApp.Services.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
+</Project>

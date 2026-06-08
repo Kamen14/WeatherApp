@@ -12,6 +12,16 @@ namespace WeatherApp.Data.Models
         [MaxLength(MaxCityNameLength)]
         public string CityName { get; set; } = null!;
 
+        [Required]
+        [MaxLength(MaxCountryNameLength)]
+        public string Country { get; set; } = null!;
+
+        [Required]
+        public double Lat { get; set; }
+
+        [Required]
+        public double Lon { get; set; }
+
         public DateTime SavedAt { get; set; } = DateTime.UtcNow;
 
         [Required]
