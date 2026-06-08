@@ -6,6 +6,8 @@
 
         public string CityName { get; set; } = null!;
 
+        public string Country { get; set; } = null!;
+
         public DateTime SavedAt { get; set; } = DateTime.UtcNow;
     }
 }
