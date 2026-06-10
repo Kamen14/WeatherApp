@@ -12,8 +12,4 @@
     <ProjectReference Include="..\WeatherApp.Services.Models\WeatherApp.Services.Models.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
-
 </Project>

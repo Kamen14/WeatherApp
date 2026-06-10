@@ -4,6 +4,9 @@ using WeatherApp.Data;
 using WeatherApp.Data.Models;
 using WeatherApp.Data.Repositories;
 using WeatherApp.Data.Repositories.Interfaces;
+using WeatherApp.Services;
+using WeatherApp.Services.Configuration;
+using WeatherApp.Services.Interfaces;
 
 namespace WeatherApp
 {
@@ -22,6 +25,14 @@ namespace WeatherApp
 
             builder.Services.AddDbContext<WeatherAppDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.Configure<WeatherApiSettings>(builder.Configuration.GetSection("WeatherApi"));
+
+            // Register the HttpClient for your service
+            builder.Services.AddHttpClient<ILocationService, LocationService>(client =>
+            {
+                client.BaseAddress = new Uri(builder.Configuration["WeatherApi:BaseUrl"]!);
+            });
 
             builder.Services.AddScoped<ISavedLocationRepository, SavedLocationRepository>();
 
